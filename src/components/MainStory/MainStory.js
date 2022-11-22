@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { QUERIES } from '../../constants';
 
 const MainStory = ({
   id,
@@ -15,9 +16,11 @@ const MainStory = ({
         <Image alt={image.alt} src={image.src} />
         <Heading>{title}</Heading>
       </a>
-      <Abstract>
-        <Location>{location}</Location> — {abstract}
-      </Abstract>
+      <div>
+        <Abstract>
+          <Location>{location}</Location> — {abstract}
+        </Abstract>
+      </div>
       <ReadMore href="/story">Continue Reading…</ReadMore>
     </Wrapper>
   );
@@ -44,6 +47,14 @@ const Abstract = styled.p`
   font-size: 1rem;
   margin-bottom: 1em;
   white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+
+  @media${QUERIES.tabletAndUp} {
+    -webkit-line-clamp: 16;
+  }
 `;
 
 const Location = styled.span`
