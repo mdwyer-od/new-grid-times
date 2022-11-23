@@ -24,9 +24,13 @@ const Wrapper = styled.article`
     order: 1;
   }
 
-
   @media${QUERIES.tabletOnly} {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
+
+    .headline {
+      order: 2;
+    }
   }
 `;
 
@@ -38,6 +42,11 @@ const Avatar = styled.img`
   object-fit: cover;
   order: 2;
   justify-self: flex-end;
+
+  @media${QUERIES.tabletOnly} {
+    order: 1;
+    justify-self: flex-start;
+  }
 `;
 
 const AuthorName = styled.p`

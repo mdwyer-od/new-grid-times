@@ -28,6 +28,10 @@ const MainStory = ({
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
+
+  @media${QUERIES.desktopAndUp} {
+    min-width: 450px;
+  }
 `;
 
 const Image = styled.img`
